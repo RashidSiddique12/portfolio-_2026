@@ -1,0 +1,274 @@
+/* Custom Cursor Styles */
+/* * {
+  cursor: none !important;
+} */
+
+/* Override cursor for interactive elements */
+/* a, button, input, textarea, select {
+  cursor: none !important;
+} */
+
+/* Network Animation Styles */
+
+/* Network Lines */
+.network-line {
+  stroke: #06b6d4;
+  stroke-width: 1;
+  stroke-opacity: 0.3;
+  fill: none;
+  stroke-dasharray: 5, 5;
+}
+
+/* Network Nodes Base Styles */
+.network-node {
+  opacity: 0.8;
+}
+
+/* Server Nodes - Circular */
+.server-node {
+  fill: #10b981;
+  stroke: #34d399;
+  stroke-width: 2;
+}
+
+/* Database Nodes - Elliptical */
+.database-node {
+  fill: #8b5cf6;
+  stroke: #a78bfa;
+  stroke-width: 2;
+}
+
+/* API Gateway Nodes - Square */
+.api-node {
+  fill: #f59e0b;
+  stroke: #fbbf24;
+  stroke-width: 2;
+}
+
+/* Client Nodes - Diamond */
+.client-node {
+  fill: #ef4444;
+  stroke: #f87171;
+  stroke-width: 2;
+}
+
+/* Data Packets */
+.data-packet {
+  fill: #06b6d4;
+  opacity: 0.8;
+}
+
+/* Status Indicators */
+.status-indicator {
+  stroke-width: 1;
+}
+
+.status-active {
+  fill: #10b981;
+  stroke: #34d399;
+}
+
+.status-warning {
+  fill: #f59e0b;
+  stroke: #fbbf24;
+}
+
+.status-error {
+  fill: #ef4444;
+  stroke: #f87171;
+}
+
+/* Network Animations */
+
+/* Network Pulse Animations */
+@keyframes network-pulse {
+  0%, 100% {
+    stroke-opacity: 0.3;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-opacity: 1;
+    stroke-dashoffset: -10;
+  }
+}
+
+@keyframes network-pulse-delayed {
+  0%, 30%, 100% {
+    stroke-opacity: 0.2;
+    stroke-dashoffset: 0;
+  }
+  65% {
+    stroke-opacity: 0.9;
+    stroke-dashoffset: -8;
+  }
+}
+
+@keyframes network-pulse-slow {
+  0%, 100% {
+    stroke-opacity: 0.2;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-opacity: 0.7;
+    stroke-dashoffset: -12;
+  }
+}
+
+/* Node Pulse Animations */
+@keyframes node-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes node-pulse-delayed {
+  0%, 40%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+@keyframes node-pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+}
+
+/* Status Blink Animations */
+@keyframes status-blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes status-blink-delayed {
+  0%, 25%, 50%, 75%, 100% {
+    opacity: 1;
+  }
+  12.5%, 37.5%, 62.5%, 87.5% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes status-blink-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* Data Flow Animations */
+@keyframes data-flow-1 {
+  0% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes data-flow-2 {
+  0%, 20% {
+    opacity: 0;
+  }
+  30%, 80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes data-flow-3 {
+  0%, 40% {
+    opacity: 0;
+  }
+  50%, 70% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Animation Classes */
+.animate-network-pulse {
+  animation: network-pulse 4s ease-in-out infinite;
+}
+
+.animate-network-pulse-delayed {
+  animation: network-pulse-delayed 4s ease-in-out infinite;
+}
+
+.animate-network-pulse-slow {
+  animation: network-pulse-slow 6s ease-in-out infinite;
+}
+
+.animate-node-pulse {
+  animation: node-pulse 3s ease-in-out infinite;
+}
+
+.animate-node-pulse-delayed {
+  animation: node-pulse-delayed 3s ease-in-out infinite;
+}
+
+.animate-node-pulse-slow {
+  animation: node-pulse-slow 4s ease-in-out infinite;
+}
+
+.animate-status-blink {
+  animation: status-blink 2s ease-in-out infinite;
+}
+
+.animate-status-blink-delayed {
+  animation: status-blink-delayed 2s ease-in-out infinite;
+}
+
+.animate-status-blink-slow {
+  animation: status-blink-slow 3s ease-in-out infinite;
+}
+
+.animate-data-flow-1 {
+  animation: data-flow-1 8s linear infinite;
+}
+
+.animate-data-flow-2 {
+  animation: data-flow-2 10s linear infinite;
+}
+
+.animate-data-flow-3 {
+  animation: data-flow-3 12s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .network-line {
+    stroke-width: 0.8;
+  }
+  
+  .network-node {
+    transform: scale(0.8);
+  }
+}

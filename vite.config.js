@@ -5,13 +5,14 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+
+  base: '/portfolio-_2026/', 
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-  base: '/portfolio-_2026/',
   },
 })

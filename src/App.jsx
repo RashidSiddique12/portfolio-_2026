@@ -179,9 +179,13 @@ function App() {
                     {item.name}
                   </a>
                 ))}
-                <button className="border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 px-4 py-1.5 rounded-full text-sm transition-all flex items-center gap-2">
+                <a
+                  href={`${import.meta.env.BASE_URL}Md_Rashid_Sidique_1.pdf`}
+                  download="Md_Rashid_Sidique_Resume.pdf"
+                  className="border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 px-4 py-1.5 rounded-full text-sm transition-all flex items-center gap-2"
+                >
                   <Download size={14} /> Resume
-                </button>
+                </a>
               </div>
             </div>
 

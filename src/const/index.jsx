@@ -92,11 +92,37 @@ export const navigation = [
     
 export const projects = [
   {
-    title: "Trello Clone",
-    category: "React.js, Redux Toolkit, REST APIs",
+    title: "MediConnect",
+    category: "Full-Stack Healthcare Platform",
+    problem:
+      "Patients lack a single platform to discover hospitals/doctors, book appointments, and access prescriptions digitally. Hospitals need a streamlined way to manage doctors, schedules, and patient records.",
     description:
-      "Developed a Trello-inspired Kanban-style task management app with full CRUD workflows and nested state management integrated with Trello APIs.",
-    tech: ["React.js", "Redux Toolkit", "REST APIs"],
+      "Centralized healthcare platform connecting patients, hospitals, and doctors. Features patient portal (doctor search, appointment booking, digital prescriptions, reviews), hospital admin panel (doctor management, dynamic scheduling, prescription uploads), and super admin dashboard (hospital onboarding, analytics, moderation).",
+    highlights: [
+      "Architecture: RESTful API with Express middleware chain (auth → role check → validation → controller), Redux Saga for frontend async flow",
+      "Security: JWT with refresh token rotation, bcrypt hashing, Helmet headers, rate limiting, role-based access control",
+      "Data Integrity: Compound unique indexes to prevent double-booking, express-validator for all inputs, audit trail on prescriptions",
+      "Performance: Lazy-loaded routes, paginated API responses, debounced search",
+    ],
+    tech: ["React 19", "Chakra UI", "Redux Toolkit", "Redux Saga", "Node.js", "Express", "MongoDB/Mongoose", "JWT", "Multer", "Cloudinary", "Swagger"],
+    icon: <Layout className="w-6 h-6 text-teal-400" />,
+    liveLink: "https://medi-connect-inky.vercel.app/",
+    repoLink: "https://github.com/RashidSiddique12/mediConnect",
+    completionDate: "May 2026",
+  },
+  {
+    title: "Trello Clone",
+    category: "React 18, Material-UI, Trello REST API",
+    description:
+      "A Trello-inspired Kanban-style task management app powered by the official Trello REST API as the backend. Users can create and manage boards, organize tasks into lists, and interact with cards through drag-and-drop. The app integrates directly with Trello's API for real-time data persistence — all boards, lists, and cards are synced with Trello's servers, eliminating the need for a custom backend.",
+    highlights: [
+      "Integrated with official Trello REST API for full backend data persistence",
+      "Create, read, update, and delete boards, lists, and cards",
+      "Responsive Material Design UI for desktop and mobile",
+      "Axios-based API layer with centralized error handling",
+      "Fast development with Vite HMR (Hot Module Replacement)",
+    ],
+    tech: ["React 18", "Material-UI", "Axios", "React Router", "Trello API"],
     icon: <Layout className="w-6 h-6 text-cyan-400" />,
     liveLink: "https://trello-phi-sable.vercel.app/",
     repoLink: "https://github.com/RashidSiddique12/Trello",
@@ -104,10 +130,18 @@ export const projects = [
   },
   {
     title: "Todoist Clone",
-    category: "Express.js, PostgreSQL, React.js, Ant Design",
+    category: "Node.js, Express, PostgreSQL, React, Redux Toolkit, Ant Design",
     description:
-      "Developed a Todoist-inspired task management application with authentication, dashboard-based CRUD workflows, and REST API integration.",
-    tech: ["Express.js", "PostgreSQL", "React.js", "Ant Design"],
+      "A full-stack task management application built with a React frontend and Node.js/Express backend, powered by PostgreSQL via Sequelize ORM. Features secure user authentication, a dashboard-driven workflow for managing tasks with full CRUD operations, and global state management using Redux Toolkit. The app supports filtering and sorting tasks by priority, due date, and status, with a fully responsive UI optimized for both mobile and desktop.",
+    highlights: [
+      "Secure user authentication and authorization with session management",
+      "Full CRUD task management with real-time dashboard updates",
+      "Filter and sort tasks by priority, due date, and completion status",
+      "RESTful API with Express and Sequelize ORM for PostgreSQL",
+      "Global state management using Redux Toolkit",
+      "Responsive design for seamless mobile and desktop experience",
+    ],
+    tech: ["Node.js", "Express", "PostgreSQL", "Sequelize", "React", "Redux Toolkit", "Ant Design"],
     icon: <Code className="w-6 h-6 text-purple-400" />,
     liveLink: "https://todoist-app-iota.vercel.app/",
     repoLink: "https://github.com/RashidSiddique12/Todoist_FullStack/tree/main",

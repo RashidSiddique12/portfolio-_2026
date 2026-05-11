@@ -446,38 +446,52 @@ function App() {
                 <div className="p-3 bg-slate-800 rounded-lg group-hover:bg-slate-700 transition-colors">
                   {project.icon}
                 </div>
-                <div className="flex gap-2">
-                  {/* {project.repoLink && ( */}
+                <div className="flex items-center gap-2">
+                  {project.completionDate && (
+                    <span className="text-xs font-mono text-slate-500">{project.completionDate}</span>
+                  )}
+                  {project.repoLink && (
                     <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
                       <Github className="w-5 h-5 text-slate-500 hover:text-white cursor-pointer transition-colors" />
                     </a>
-                  {/* )} */}
-                  {/* {project.liveLink && ( */}
+                  )}
+                  {project.liveLink && (
                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-5 h-5 text-slate-500 hover:text-white cursor-pointer transition-colors" />
                     </a>
-                  {/* )} */}
+                  )}
                 </div>
               </div>
 
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">
-                  {project.title}
-                </h3>
-                {project.completionDate && (
-                  <div className="text-xs font-mono text-slate-500">
-                    {project.completionDate}
-                  </div>
-                )}
-              </div>
+              <h3 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors mb-1">
+                {project.title}
+              </h3>
 
               <div className="text-xs font-mono text-cyan-500 mb-3">
                 {project.category}
               </div>
 
-              <p className="text-slate-400 text-sm mb-6 flex-grow">
+              {project.problem && (
+                <div className="mb-3 p-2.5 bg-slate-800/50 rounded-lg border-l-2 border-teal-500">
+                  <span className="text-[10px] font-semibold text-teal-400 uppercase tracking-wider">The Problem</span>
+                  <p className="text-slate-400 text-xs mt-1">{project.problem}</p>
+                </div>
+              )}
+
+              <p className="text-slate-400 text-sm mb-4">
                 {project.description}
               </p>
+
+              {project.highlights && (
+                <ul className="mb-4">
+                  {project.highlights.map((h, i) => (
+                    <li key={i} className="flex items-start gap-1.5 text-xs text-slate-400 mb-1">
+                      <ChevronRight className="w-3 h-3 text-teal-400 mt-0.5 flex-shrink-0" />
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
 
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.tech.map((t) => (
